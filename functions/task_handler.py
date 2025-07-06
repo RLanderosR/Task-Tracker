@@ -22,16 +22,17 @@ def add_task(id, description: str) -> dict:
     return [
         _id,
         {
-            "id": _id,
-            "description": description,
-            "status": constants.TASK_STATUS[0],  # resolves to "todo" status
-            "createdAt": utils.updatedTime(),
-            "updatedAt": utils.updatedTime(),
+            _id: {
+                "description": description,
+                "status": constants.TASK_STATUS[0],  # resolves to "todo" status
+                "createdAt": utils.updatedTime(),
+                "updatedAt": utils.updatedTime(),
+            }
         },
     ]
 
 
 # update description
-def update_task(description):
+def update_task(description) -> None:
     """Update the task description and return the updated timestamp."""
     return description, utils.updatedTime()
