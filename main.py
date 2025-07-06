@@ -12,7 +12,7 @@ def main() -> None:
     if not os.path.exists(constants.FILE_PATH):
         # Create a new JSON file with the specified structure
         with open(constants.FILE_PATH, "w") as f:
-            json.dump({"tasks": []}, f)
+            json.dump({"tasks": {}}, f)
 
     # Read the contents of the JSON file
     with open(constants.FILE_PATH, "r") as f:

@@ -15,5 +15,5 @@ def initial_id(tasks: dict) -> int:
         return _id
 
     # list is empty (new list), so return an id of 0
-    except IndexError:
+    except (IndexError, AttributeError):
         return 0
